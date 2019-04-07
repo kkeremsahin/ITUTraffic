@@ -6,6 +6,9 @@
  * 
  */
 
+
+// FILL ALL COMMENTED FUNCTIONS
+
 #define ARDUINO_OK 10
 #define RASPBERRY_OK 11
 
@@ -72,8 +75,8 @@ void loop(){
 
   //line_follow();
 
-  // if(qtrDataInverted())
-  //   readSign();
+  //if(qtrDataInverted())   // uncomment this in order to detect color inversion 
+     readSign();
 
   
 
@@ -98,19 +101,19 @@ void flushIncoming(){
   Serial.read();
 }
 
-/*void readSign(){
- * 
- *  send read signal , then halt
- *  
- *  after halt duration data will be read in switch()
- * 
- *  Serial.write(READ_SIGN);
- * 
- *  halt();
- *  
- *  
- *  
- * 
- * }
- */
-     
+void readSign(){ 
+    //send read signal , then halt
+  
+    //after halt duration data will be read in switch()
+ 
+ Serial.write(READ_SIGN);
+
+ //halt();          
+ 
+ delay (1000);      // for debugging purposes only !
+ 
+ 
+
+}
+
+    
